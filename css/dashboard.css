@@ -347,6 +347,183 @@ nav .profile-details i{
   font-weight: 400;
   color: #333;
 }
+.navbar{
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 9;
+}
+
+.nav{
+  padding: 10px 10vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.brand-logo{
+  height: 60px;
+}
+
+.nav-items{
+  display: flex;
+  align-items: center;
+}
+
+.search{
+  width: 500px;
+  display: flex;
+}
+
+.search-box{
+  width: 80%;
+  height: 40px;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 1px solid #d1d1d1;
+  text-transform: capitalize;
+  background: none;
+  color: #a9a9a9;
+  outline: none;
+}
+
+.search-btn{
+  width: 20%;
+  height: 40px;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #E8D426;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 15px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.search-box::placeholder{
+  color: #a9a9a9;
+}
+
+.nav-items a{
+  margin-left: 20px;
+}
+
+.nav-items a img{
+  width: 30px;
+}
+.links-container{
+  width: 100%;
+  display: flex;
+  padding: 10px 10vw;
+  justify-content: center;
+  list-style: none;
+  border-top: 1px solid #d1d1d1;
+}
+
+.link{
+  text-transform: capitalize;
+  padding: 0 10px;
+  margin: 0 5px;
+  text-decoration: none;
+  color: #212529;
+  opacity: 1;
+  transition: .5s;
+}
+
+.link:hover{
+  opacity: 1;
+}
+.hero-section{
+  width: 100%;
+  height: calc(100vh - 120px);
+  background-image: url('../img/fashion-store.jpg');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-section .logo{
+  height: 150px;
+  display: block;
+  margin: auto;
+}
+
+.hero-section .sub-heading{
+  margin-top: 10px;
+  text-align: center;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 35px;
+  font-weight: 300;
+}
+.product{
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.product-category{
+  padding: 0 10vw;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  text-transform: capitalize;
+}
+footer{
+  position: relative;
+  width: 100%;
+  padding: 40px 10vw;
+  padding-bottom: 80px;
+  background: #383838;
+}
+
+.footer-content{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.footer-content .logo{
+  height: 160px;
+}
+
+.footer-ul-container{
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.category{
+  width: 200px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  list-style: none;
+}
+
+.category-title{
+  grid-column: span 2;
+  text-transform: capitalize;
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.category .footer-link{
+  text-decoration: none;
+  text-transform: capitalize;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-link:hover{
+  color: #fff;
+}
+
 /* The Modal (background) */
 .ebcf_modal {
     display: none; /* Hidden by default */
@@ -413,7 +590,7 @@ nav .profile-details i{
   width: 240px;
   height: 450px;
   margin-right: 40px;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .product-image{
@@ -508,7 +685,7 @@ nav .profile-details i{
   width: 450px;
   height: 500px;
   position: relative;
-  background-image: url('../img/laptop.jpg');
+  background-image: url('../img/jacket.jpg');
   background-size: cover;
   margin-right: 1rem;
 }

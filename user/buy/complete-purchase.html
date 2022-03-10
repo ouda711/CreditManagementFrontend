@@ -53,69 +53,38 @@
 
    </head>
 <body>
-  <div class="sidebar">
-    <div class="logo-details">
-      <i class='bx bxl-c-plus-plus'></i>
-      <span class="logo_name">Credit Mngr</span>
-    </div>
-    <ul class="nav-links">
-        <li>
-          <a href="/dashboards/user-dashboard.html">
-            <i class='bx bx-grid-alt' ></i>
-            <span class="links_name">Dashboard</span>
-          </a>
-        </li>
-        <li>
-          <a href="/user/accounts.html"  class="active">
-            <i class='bx bx-box' ></i>
-            <span class="links_name">Your Accounts</span>
-          </a>
-        </li>
-        <li>
-          <a href="/user/transactions.html">
-            <i class='bx bx-list-ul' ></i>
-            <span class="links_name">Your Transactions</span>
-          </a>
-        </li>
-        <li>
-          <a href="/user/balances.html">
-            <i class='bx bx-pie-chart-alt-2' ></i>
-            <span class="links_name">Balances</span>
-          </a>
-        </li>
-        <li>
-          <a href="/user/reports.html">
-            <i class='bx bx-coin-stack' ></i>
-            <span class="links_name">Reports</span>
-          </a>
-        </li>
-        <li class="log_out">
-          <a href="#">
-            <i class='bx bx-log-out'></i>
-            <span class="links_name">Log out</span>
-          </a>
-        </li>
-      </ul>
-  </div>
-  <section class="home-section">
-    <nav>
-      <div class="sidebar-button">
-        <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Complete Purchase</span>
-      </div>
+  <nav class="navbar"></nav>
+  <section class="product-details" id="product_details">
+    <div id="myModal" class="modal">
+
+        
+        <div class="purchase-modal-content">
+          <span class="close">&times;</span>
+          <h2 class="purchase-modal-header">Credit Purchase Confirmation</h2>
+          <p class="purchase-description">You are about to make a credit purchase with the following details:</p>
+          <ul class="purchase-list" id="purchase_list">
+              
+          </ul>
+          <small>The repayment will be done as per your limit</small>
+          <div style="display:flex;align-items:center;justify-content:center;"><button class="btn btn-primary btn-block" style="padding: 0.2rem; ">Proceed</button></div>
+        </div>
       
-      <div class="profile-details">
-        <!--<img src="images/profile.jpg" alt="">-->
-        <span class="admin_name">Prem Shahi</span>
-        <i class='bx bx-chevron-down' ></i>
       </div>
-    </nav>
+</section>
+<section class="detail-des">
+    <h2 class="heading">description</h2>
+    <p class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, ......</p>
+</section>
+  <!-- <nav class="navbar"></nav>
+
+  <section class="home-section">
+    
 
     <div class="home-content">
         <section class="product-details" id="product_details">
             <div id="myModal" class="modal">
 
-                <!-- Modal content -->
+                
                 <div class="purchase-modal-content">
                   <span class="close">&times;</span>
                   <h2 class="purchase-modal-header">Credit Purchase Confirmation</h2>
@@ -137,7 +106,7 @@
         
     </div>
           
-  </section>
+  </section> -->
 
   <script src="../../js/vendors/jquery/jquery.min.js"></script>
   <script src="../../js/main.js"></script>
@@ -195,7 +164,7 @@ sidebarBtn.onclick = function() {
             const objects = JSON.parse(this.responseText);
             if(objects.success == true){
                 
-                document.getElementById("product_details").innerHTML += ('<div class="image-slider"><div class="product-images"><img src="../../img/laptop.jpg" class="active" alt=""></div></div><div class="details"><h2 class="product-brand">'+objects.name+'</h2><p class="product-short-des">'+objects.slug+'</p><span class="product-price">Ksh. '+objects.price+'</span><p class="product-sub-heading">Input Payment Details</p><div class="side-details"<form id="submitForm" method="post" data-parsley-validate="" data-parsley-errors-messages-disabled="true" novalidate="" _lpchecked="1"><input type="hidden" name="_csrf" value="7635eb83-1f95-4b32-8788-abec2724a9a4"><input type="hidden" id="productName" value="'+objects.name+'"/><input type="hidden" id="unitPrice" value="'+objects.price+'"/><div class="form-group required"><label class="d-flex flex-row align-items-center" for="quantity">Quantity <a class="ml-auto border-link small-xl" href=""></a></label><input type="number" class="form-control" required="" id="quantity" name="quantity" value="1"></div><div class="form-group required"><label class="d-flex flex-row align-items-center" for="account">Select Account<a class="ml-auto border-link small-xl" href=""></a></label><select class="form-control" required="" id="account" name="account"></select></div></div></form><div class="form-group pt-1"><button id="myBtn" class="btn btn-primary btn-block" type="submit">Submit</button></div></div>')
+                document.getElementById("product_details").innerHTML += ('<div class="image-slider"><div class="product-images"><img src="../../img/jacket.jpg" class="active" alt=""></div></div><div class="details"><h2 class="product-brand">'+objects.name+'</h2><p class="product-short-des">'+objects.slug+'</p><span class="product-price">Ksh. '+objects.price+'</span><p class="product-sub-heading">Input Payment Details</p><div class="side-details"<form id="submitForm" method="post" data-parsley-validate="" data-parsley-errors-messages-disabled="true" novalidate="" _lpchecked="1"><input type="hidden" name="_csrf" value="7635eb83-1f95-4b32-8788-abec2724a9a4"><input type="hidden" id="productName" value="'+objects.name+'"/><input type="hidden" id="unitPrice" value="'+objects.price+'"/><div class="form-group required"><label class="d-flex flex-row align-items-center" for="quantity">Quantity <a class="ml-auto border-link small-xl" href=""></a></label><input type="number" class="form-control" required="" id="quantity" name="quantity" value="1"></div><div class="form-group required"><label class="d-flex flex-row align-items-center" for="account">Select Account<a class="ml-auto border-link small-xl" href=""></a></label><select class="form-control" required="" id="account" name="account"></select></div></div></form><div class="form-group pt-1"><button id="myBtn" class="btn btn-primary btn-block" style="padding:0.2rem" type="submit">Submit</button></div></div>')
 
                 let dropdown =  document.getElementById("account");
                 for(var i = 0; i < accountArray.length; i++){
@@ -257,6 +226,35 @@ sidebarBtn.onclick = function() {
 
 
  </script>
+ <script>
+  const createNav = () => {
+    let nav = document.querySelector('.navbar');
+
+    nav.innerHTML = `
+        <div class="nav">
+            <img src="img/dark-logo.png" class="brand-logo" alt="">
+            <div class="nav-items">
+                <div class="search">
+                    <input type="text" class="search-box" placeholder="search brand, product">
+                    <button class="search-btn">search</button>
+                </div>
+                <a href="#"><img src="img/user.png" alt=""></a>
+                <a href="#"><img src="img/cart.png" alt=""></a>
+            </div>
+        </div>
+        <ul class="links-container">
+            <li class="link-item"><a href="#" class="link">home</a></li>
+            <li class="link-item"><a href="#" class="link">women</a></li>
+            <li class="link-item"><a href="#" class="link">men</a></li>
+            <li class="link-item"><a href="#" class="link">kids</a></li>
+            <li class="link-item"><a href="#" class="link">accessories</a></li>
+        </ul>
+    `;
+}
+
+createNav();
+
+</script>
 </body>
 </html>
 
