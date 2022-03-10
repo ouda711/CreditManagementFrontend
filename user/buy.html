@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
+    <link rel="stylesheet" href="../css/styles.css"/>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">Credit Mngr</span>
+    </div>
+    <ul class="nav-links">
+        <li>
+          <a href="/dashboards/user-dashboard.html">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="/user/accounts.html"  class="active">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Your Accounts</span>
+          </a>
+        </li>
+        <li>
+          <a href="/user/transactions.html">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Your Transactions</span>
+          </a>
+        </li>
+        <li>
+          <a href="/user/balances.html">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Balances</span>
+          </a>
+        </li>
+        <li>
+          <a href="/user/reports.html">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Reports</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="#">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">MarketPlace</span>
+      </div>
+      
+      <div class="profile-details">
+        <!--<img src="images/profile.jpg" alt="">-->
+        <span class="admin_name">Prem Shahi</span>
+        <i class='bx bx-chevron-down' ></i>
+      </div>
+    </nav>
+
+    <div class="home-content" >
+        <div class="product-container" id="home_content">
+
+        </div>
+   
+    </div>
+    </div>
+          
+  </section>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+
+<script>
+    var jwt = localStorage.getItem("jwt");
+    const xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "http://localhost:8080/api/products");
+    xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhttp.setRequestHeader("Authorization", "Bearer "+jwt)
+    xhttp.send();
+
+    xhttp.onreadystatechange = function(){
+        if(this.readyState == 4){
+            const objects = JSON.parse(this.responseText);
+            if(objects.success == true){
+                let productArray = objects.products;
+                let body = document.getElementById("home_content")
+                productArray.forEach(element => {
+                   body.innerHTML += '<div class="product-card"><div class="product-image"><span class="discount-tag">50% off</span><img src="'+element.imageUrls[0]+'" class="product-thumb" alt=""><a href="/user/buy/complete-purchase.html?productId='+element.slug+'" class="card-btn">Buy Now</a></div><div class="product-info"><h2 class="product-brand">'+element.name+'</h2><p class="product-short-des">'+element.slug+'</p><span class="price">Ksh.'+element.price+'</span></div></div>'
+                });
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
+
