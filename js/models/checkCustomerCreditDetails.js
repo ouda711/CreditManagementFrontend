@@ -19,7 +19,7 @@ function checkCustomerCredentials()
                 document.getElementById('mySizeChartModal').style.display = "none";
             }else{
                 console.log(objects)
-                document.getElementById('mySizeChartModal').style.display = "block";
+                // document.getElementById('mySizeChartModal').style.display = "block";
             }
         }
     }

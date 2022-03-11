@@ -33,7 +33,7 @@ function login() {
                         },
                         onClick: function(){} // Callback after click
                       }).showToast();
-                    window.location.href = '../../dashboards/user-dashboard.html';
+                    window.location.href = '../../user/buy.html';
                 }else{
                     window.location.href = '../../dashboards/admin-dashboard.html';
                 }
