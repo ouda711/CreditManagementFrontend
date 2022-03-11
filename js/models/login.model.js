@@ -16,7 +16,7 @@ function login() {
             console.log(objects.success);
             if(objects.success == true){
                 let role = objects.data.roles[0];
-                //console.log(objects.data.token)
+                localStorage.setItem("username",objects.data.username)
                 localStorage.setItem("jwt", objects.data.token);
                 if(role == 'ROLE_USER'){
                     // window.onbeforeunload = function() { return "Your work will be lost."; };
